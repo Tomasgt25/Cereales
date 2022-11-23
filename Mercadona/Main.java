@@ -16,15 +16,19 @@ public class Main {
         lista[2] = cereal3;
         lista[3] = vino1;
         lista[4] = vino2;
-         int contCal;
+        int contCal = 0;
 
         for (ProductosAlimenticios item : lista) {
-            if (item instanceof Cereales){
-                ((Cereales) item).getCalorias();
+            if (item instanceof Cereales) {
+                contCal += ((Cereales) item).getCalorias();
+            } else if (item instanceof Vino) {
+                contCal += ((Vino) item).getCalorias();
             }
+
+
         }
+        System.out.println(contCal);
+
+
     }
-
-
-
 }
